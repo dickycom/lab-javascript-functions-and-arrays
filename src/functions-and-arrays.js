@@ -454,23 +454,29 @@ const matrix = [
 ];
 
 function greatestProduct(matrix) {
+	// Array of possible 4 number combo
 	let totalArr = [];
+
+	// Array of product of each 4 numbo combo
 	let total = [];
+
+	// Largest value of all the products
 	let largest = 0;
+
 	for (let x = 0; x < matrix.length - 4; x++) {
 		for (let y = 0; y < matrix[x].length - 4; y++) {
 			let arr = [];
-			for (let z = 0; z < 4; z++) {
-				arr.push(matrix[x][y]);
+			for (let z = y; z < y + 4; z++) {
+				arr.push(matrix[x][z]);
 			}
 			totalArr.push(arr);
 		}
 	}
-	for (let x = 0; x < matrix.length - 4; x++) {
-		for (let y = 0; y < matrix[x].length - 4; y++) {
+	for (let y = 0; y < matrix.length - 4; y++) {
+		for (let x = 0; x < matrix[y].length - 4; x++) {
 			let arr = [];
-			for (let z = 0; z < 4; z++) {
-				arr.push(matrix[y][x]);
+			for (let z = 0; z < x + 4; z++) {
+				arr.push(matrix[y][z]);
 			}
 			totalArr.push(arr);
 		}
@@ -488,7 +494,8 @@ function greatestProduct(matrix) {
 			largest = num;
 		}
 	}
-
+	console.log(totalArr);
+	console.log(total);
 	return largest;
 }
 
