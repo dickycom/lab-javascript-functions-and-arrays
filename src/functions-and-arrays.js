@@ -472,20 +472,32 @@ function greatestProduct(matrix) {
 			totalArr.push(arr);
 		}
 	}
-	for (let y = 0; y < matrix.length - 4; y++) {
-		for (let x = 0; x < matrix[y].length - 4; x++) {
+	for (let x = 0; x < matrix.length - 4; x++) {
+		for (let y = 0; y < matrix[x].length - 4; y++) {
 			let arr = [];
-			for (let z = 0; z < x + 4; z++) {
-				arr.push(matrix[y][z]);
+			for (let z = y; z < y + 4; z++) {
+				arr.push(matrix[z][x]);
 			}
 			totalArr.push(arr);
 		}
 	}
+
+	// for (let y = 0; y < matrix.length - 4; y++) {
+	// 	for (let x = 0; x < matrix[y].length - 4; x++) {
+	// 		let arr = [];
+	// 		for (let z = 0; z < x + 4; z++) {
+	// 			arr.push(matrix[y][z]);
+	// 		}
+	// 		totalArr.push(arr);
+	// 	}
+	// }
+
+	const multiply = function (a, b) {
+		return a * b;
+	};
+
 	totalArr.forEach((arr) => {
-		let sum = 1;
-		for (num of arr) {
-			sum *= num;
-		}
+		let sum = arr.reduce(multiply);
 		total.push(sum);
 	});
 
