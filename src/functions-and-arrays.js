@@ -1,140 +1,140 @@
-// // Iteration #1: Find the maximum
-// function maxOfTwoNumbers(num1, num2) {
-// 	if (num1 > num2) {
-// 		return num1;
-// 	}
-// 	return num2;
-// }
+// Iteration #1: Find the maximum
+function maxOfTwoNumbers(num1, num2) {
+	if (num1 > num2) {
+		return num1;
+	}
+	return num2;
+}
 
-// // Iteration #2: Find longest word
-// const words = [
-// 	'mystery',
-// 	'brother',
-// 	'aviator',
-// 	'crocodile',
-// 	'pearl',
-// 	'orchard',
-// 	'crackpot',
-// ];
+// Iteration #2: Find longest word
+const words = [
+	'mystery',
+	'brother',
+	'aviator',
+	'crocodile',
+	'pearl',
+	'orchard',
+	'crackpot',
+];
 
-// function findLongestWord(wordArr) {
-// 	if (wordArr.length == 0) return null;
-// 	let longestWord = '';
-// 	for (word of wordArr) {
-// 		if (word.length > longestWord.length) {
-// 			longestWord = word;
-// 		}
-// 	}
+function findLongestWord(wordArr) {
+	if (wordArr.length == 0) return null;
+	let longestWord = '';
+	for (word of wordArr) {
+		if (word.length > longestWord.length) {
+			longestWord = word;
+		}
+	}
 
-// 	return longestWord;
-// }
-// // Iteration #3: Calculate the sum
+	return longestWord;
+}
+// Iteration #3: Calculate the sum
 
-// const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-// function sumNumbers(numArr) {
-// 	let sum = 0;
-// 	for (num of numArr) {
-// 		sum += num;
-// 	}
+const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers(numArr) {
+	let sum = 0;
+	for (num of numArr) {
+		sum += num;
+	}
 
-// 	return sum;
-// }
+	return sum;
+}
 
-// // Iteration #4: Calculate the average
-// // Level 1: Array of numbers
-// const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-// function averageNumbers(numArr) {
-// 	if (numArr.length == 0) return null;
-// 	return sumNumbers(numArr) / numArr.length;
-// }
-// // Level 2: Array of strings
-// const wordsArr = [
-// 	'seat',
-// 	'correspond',
-// 	'linen',
-// 	'motif',
-// 	'hole',
-// 	'smell',
-// 	'smart',
-// 	'chaos',
-// 	'fuel',
-// 	'palace',
-// ];
-// function averageWordLength(stringArr) {
-// 	if (stringArr.length == 0) return null;
-// 	let stringLen = [];
-// 	for (word of stringArr) {
-// 		stringLen.push(word.length);
-// 	}
-// 	return averageNumbers(stringLen);
-// }
-// // Iteration #5: Unique arrays
-// const wordsUnique = [
-// 	'crab',
-// 	'poison',
-// 	'contagious',
-// 	'simple',
-// 	'bring',
-// 	'sharp',
-// 	'playground',
-// 	'poison',
-// 	'communion',
-// 	'simple',
-// 	'bring',
-// ];
+// Iteration #4: Calculate the average
+// Level 1: Array of numbers
+const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function averageNumbers(numArr) {
+	if (numArr.length == 0) return null;
+	return sumNumbers(numArr) / numArr.length;
+}
+// Level 2: Array of strings
+const wordsArr = [
+	'seat',
+	'correspond',
+	'linen',
+	'motif',
+	'hole',
+	'smell',
+	'smart',
+	'chaos',
+	'fuel',
+	'palace',
+];
+function averageWordLength(stringArr) {
+	if (stringArr.length == 0) return null;
+	let stringLen = [];
+	for (word of stringArr) {
+		stringLen.push(word.length);
+	}
+	return averageNumbers(stringLen);
+}
+// Iteration #5: Unique arrays
+const wordsUnique = [
+	'crab',
+	'poison',
+	'contagious',
+	'simple',
+	'bring',
+	'sharp',
+	'playground',
+	'poison',
+	'communion',
+	'simple',
+	'bring',
+];
 
-// function uniquifyArray(wordArr) {
-// 	if (wordArr.length == 0) return null;
-// 	let uniqueArr = [];
+function uniquifyArray(wordArr) {
+	if (wordArr.length == 0) return null;
+	let uniqueArr = [];
 
-// 	for (word of wordArr) {
-// 		if (!uniqueArr.includes(word)) {
-// 			uniqueArr.push(word);
-// 		}
-// 	}
+	for (word of wordArr) {
+		if (!uniqueArr.includes(word)) {
+			uniqueArr.push(word);
+		}
+	}
 
-// 	return uniqueArr;
-// }
+	return uniqueArr;
+}
 
-// // Iteration #6: Find elements
-// const wordsFind = [
-// 	'machine',
-// 	'subset',
-// 	'trouble',
-// 	'starting',
-// 	'matter',
-// 	'eating',
-// 	'truth',
-// 	'disobedience',
-// ];
-// function doesWordExist(wordArr, match) {
-// 	if (wordArr.length == 0) return null;
-// 	return wordArr.includes(match);
-// }
-// // Iteration #7: Count repetition
-// const wordsCount = [
-// 	'machine',
-// 	'matter',
-// 	'subset',
-// 	'trouble',
-// 	'starting',
-// 	'matter',
-// 	'eating',
-// 	'matter',
-// 	'truth',
-// 	'disobedience',
-// 	'matter',
-// ];
+// Iteration #6: Find elements
+const wordsFind = [
+	'machine',
+	'subset',
+	'trouble',
+	'starting',
+	'matter',
+	'eating',
+	'truth',
+	'disobedience',
+];
+function doesWordExist(wordArr, match) {
+	if (wordArr.length == 0) return null;
+	return wordArr.includes(match);
+}
+// Iteration #7: Count repetition
+const wordsCount = [
+	'machine',
+	'matter',
+	'subset',
+	'trouble',
+	'starting',
+	'matter',
+	'eating',
+	'matter',
+	'truth',
+	'disobedience',
+	'matter',
+];
 
-// function howManyTimes(wordArr, match) {
-// 	let count = 0;
-// 	for (word of wordArr) {
-// 		word == match ? count++ : (count += 0);
-// 	}
+function howManyTimes(wordArr, match) {
+	let count = 0;
+	for (word of wordArr) {
+		word == match ? count++ : (count += 0);
+	}
 
-// 	return count;
-// }
-// // Iteration #8: Bonus
+	return count;
+}
+// Iteration #8: Bonus
 
 const matrix = [
 	[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
@@ -467,20 +467,66 @@ function greatestProduct(matrix) {
 	for (let x = 0; x < matrix.length; x++) {
 		for (let y = 0; y <= matrix.length - 4; y++) {
 			let arr = [];
+			let arr2 = [];
 			for (let z = y; z < y + 4; z++) {
 				arr.push(matrix[x][z]);
+				arr2.push(matrix[z][x]);
 			}
+			totalArr.push(arr, arr2);
+		}
+	}
+
+	const multiply = function (a, b) {
+		return a * b;
+	};
+
+	// gets the product of each pairs of 4
+	totalArr.forEach((arr) => {
+		let sum = arr.reduce(multiply);
+		total.push(sum);
+	});
+
+	//find the largest numbers
+	for (num of total) {
+		if (num > largest) {
+			largest = num;
+		}
+	}
+	console.log(totalArr);
+	return largest;
+}
+
+console.log(greatestProduct(matrix));
+
+// 8.2 iteration
+function greatestProductOfDiagonals(matrix) {
+	// Array of possible 4 number combo
+	let totalArr = [];
+
+	// Array of product of each 4 numbo combo
+	let total = [];
+
+	// Largest value of all the products
+	let largest = 0;
+
+	for (let x = 0; x < matrix.length - 3; x++) {
+		for (let y = 0; y < matrix.length - 3; y++) {
+			let arr = [];
+			for (let z = x, w = y; z < x + 4; z++, w++) {
+				arr.push(matrix[z][w]);
+			}
+
 			totalArr.push(arr);
 		}
 	}
 
-	// loops through each column for pairs of 4
-	for (let x = 0; x < matrix.length; x++) {
-		for (let y = 0; y <= matrix.length - 4; y++) {
+	for (let x = 0; x < matrix.length - 3; x++) {
+		for (let y = matrix.length - 1; y > 2; y--) {
 			let arr = [];
-			for (let z = y; z < y + 4; z++) {
-				arr.push(matrix[z][x]);
+			for (let z = x, w = y; z < x + 4; z++, w--) {
+				arr.push(matrix[z][w]);
 			}
+
 			totalArr.push(arr);
 		}
 	}
@@ -505,62 +551,7 @@ function greatestProduct(matrix) {
 	return largest;
 }
 
-console.log(greatestProduct(matrix));
-
-// // 8.2 iteration
-// function greatestProductOfDiagonals(matrix) {
-// 	// Array of possible 4 number combo
-// 	let totalArr = [];
-
-// 	// Array of product of each 4 numbo combo
-// 	let total = [];
-
-// 	// Largest value of all the products
-// 	let largest = 0;
-
-// 	for (let x = 0; x < matrix.length - 3; x++) {
-// 		for (let y = 0; y < matrix.length - 3; y++) {
-// 			let arr = [];
-// 			for (let z = x, w = y; z < x + 4; z++, w++) {
-// 				arr.push(matrix[z][w]);
-// 			}
-
-// 			totalArr.push(arr);
-// 		}
-// 	}
-
-// 	for (let x = 0; x < matrix.length - 3; x++) {
-// 		for (let y = matrix.length - 1; y > 2; y--) {
-// 			let arr = [];
-// 			for (let z = x, w = y; z < x + 4; z++, w--) {
-// 				arr.push(matrix[z][w]);
-// 			}
-
-// 			totalArr.push(arr);
-// 		}
-// 	}
-
-// 	const multiply = function (a, b) {
-// 		return a * b;
-// 	};
-
-// 	// gets the product of each pairs of 4
-// 	totalArr.forEach((arr) => {
-// 		let sum = arr.reduce(multiply);
-// 		total.push(sum);
-// 	});
-
-// 	//find the largest numbers
-// 	for (num of total) {
-// 		if (num > largest) {
-// 			largest = num;
-// 		}
-// 	}
-
-// 	return largest;
-// }
-
-// console.log(greatestProductOfDiagonals(matrix));
+console.log(greatestProductOfDiagonals(matrix));
 
 // iteration 8.1 version 2
 function getNumArr(matrix, incr) {
