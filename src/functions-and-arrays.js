@@ -463,8 +463,9 @@ function greatestProduct(matrix) {
 	// Largest value of all the products
 	let largest = 0;
 
+	// Loops through each row for pairs of 4
 	for (let x = 0; x < matrix.length; x++) {
-		for (let y = 0; y < matrix[x].length - 4; y++) {
+		for (let y = 0; y < matrix.length - 4; y++) {
 			let arr = [];
 			for (let z = y; z < y + 4; z++) {
 				arr.push(matrix[x][z]);
@@ -472,8 +473,10 @@ function greatestProduct(matrix) {
 			totalArr.push(arr);
 		}
 	}
+
+	// loops through each column for pairs of 4
 	for (let x = 0; x < matrix.length; x++) {
-		for (let y = 0; y < matrix[x].length - 4; y++) {
+		for (let y = 0; y < matrix.length - 4; y++) {
 			let arr = [];
 			for (let z = y; z < y + 4; z++) {
 				arr.push(matrix[z][x]);
@@ -482,33 +485,79 @@ function greatestProduct(matrix) {
 		}
 	}
 
-	// for (let y = 0; y < matrix.length - 4; y++) {
-	// 	for (let x = 0; x < matrix[y].length - 4; x++) {
-	// 		let arr = [];
-	// 		for (let z = 0; z < x + 4; z++) {
-	// 			arr.push(matrix[y][z]);
-	// 		}
-	// 		totalArr.push(arr);
-	// 	}
-	// }
-
 	const multiply = function (a, b) {
 		return a * b;
 	};
 
+	// gets the product of each pairs of 4
 	totalArr.forEach((arr) => {
 		let sum = arr.reduce(multiply);
 		total.push(sum);
 	});
 
+	//find the largest numbers
 	for (num of total) {
 		if (num > largest) {
 			largest = num;
 		}
 	}
-	console.log(totalArr);
-	console.log(total);
+
 	return largest;
 }
 
 console.log(greatestProduct(matrix));
+
+// 8.1 iteration
+function greatestProductOfDiagonals(matrix) {
+	// Array of possible 4 number combo
+	let totalArr = [];
+
+	// Array of product of each 4 numbo combo
+	let total = [];
+
+	// Largest value of all the products
+	let largest = 0;
+
+	for (let x = 0; x < matrix.length - 3; x++) {
+		for (let y = 0; y < matrix.length - 3; y++) {
+			let arr = [];
+			for (let z = x, w = y; z < x + 4; z++, w++) {
+				arr.push(matrix[z][w]);
+			}
+
+			totalArr.push(arr);
+		}
+	}
+
+	for (let x = 0; x < matrix.length - 3; x++) {
+		for (let y = matrix.length - 1; y > 2; y--) {
+			let arr = [];
+			for (let z = x, w = y; z < x + 4; z++, w--) {
+				arr.push(matrix[z][w]);
+			}
+
+			totalArr.push(arr);
+		}
+	}
+
+	const multiply = function (a, b) {
+		return a * b;
+	};
+
+	// gets the product of each pairs of 4
+	totalArr.forEach((arr) => {
+		let sum = arr.reduce(multiply);
+		total.push(sum);
+	});
+
+	//find the largest numbers
+	for (num of total) {
+		if (num > largest) {
+			largest = num;
+		}
+	}
+
+	return largest;
+}
+
+console.log(greatestProductOfDiagonals(matrix));
